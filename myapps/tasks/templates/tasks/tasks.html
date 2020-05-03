@@ -4,7 +4,37 @@
 {% block title %}Tasks - Home{% endblock %}
 
 {% block content %}
-    <div class="mx-auto">
-        <h1>Hello World!</h1>
+    <div class="container">
+        <div id="app">
+            <form>
+                <div class="form-row mt-5">
+                    <div class="form-group col-md-8">
+                        <label for="task">Create Task</label>
+                        <input type="text" class="form-control" placeholder="Task" id="task"/>
+                    </div>
+                    <div class="form-group col-md-4 d-flex align-content-end">
+                        <button class="btn btn-outline-success mt-auto">Create</button>
+                    </div>
+                </div>
+            </form>
+            <div class="mt-5">
+                <div class="card mb-2">
+                    <div class="card-body">
+                        lksdk
+                        <button type="submit" class="close float-right">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card mb-2">
+                    <div class="card-body">
+                        lksdk
+                        <button type="submit" class="close float-right">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
