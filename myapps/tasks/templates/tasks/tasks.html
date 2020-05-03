@@ -10,7 +10,7 @@
                 <div class="form-row mt-5">
                     <div class="form-group col-md-8">
                         <label for="task">Create Task</label>
-                        <input type="text" class="form-control" placeholder="Task" id="task"/>
+                        <input type="text" class="form-control" id="task" placeholder="Task" v-model="task" />
                     </div>
                     <div class="form-group col-md-4 d-flex align-content-end">
                         <button class="btn btn-outline-success mt-auto">Create</button>
@@ -18,17 +18,9 @@
                 </div>
             </form>
             <div class="mt-5">
-                <div class="card mb-2">
+                <div class="card mb-2" v-for="task in tasks">
                     <div class="card-body">
-                        [[ task ]]
-                        <button type="submit" class="close float-right">
-                            <span>&times;</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="card mb-2">
-                    <div class="card-body">
-                        [[ task ]]
+                        [[ task.title ]]
                         <button type="submit" class="close float-right">
                             <span>&times;</span>
                         </button>
