@@ -5,3 +5,11 @@ window.setTimeout(function() {
       $(this).remove();
     });
 }, 1000);
+
+var app = new Vue({
+    el: '#app',
+    delimiters: ['[[', ']]'],
+    data: {
+        task: 'do nothing'
+    }
+})
