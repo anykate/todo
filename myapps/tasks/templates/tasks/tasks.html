@@ -6,11 +6,11 @@
 {% block content %}
     <div class="container">
         <div id="app">
-            <form>
+            <form @submit.prevent="createTask">
                 <div class="form-row mt-5">
                     <div class="form-group col-md-8">
                         <label for="task">Create Task</label>
-                        <input type="text" class="form-control" id="task" placeholder="Task" v-model="task" />
+                        <input type="text" class="form-control" id="task" placeholder="Task" v-model="task"/>
                     </div>
                     <div class="form-group col-md-4 d-flex align-content-end">
                         <button class="btn btn-outline-success mt-auto">Create</button>
@@ -18,10 +18,15 @@
                 </div>
             </form>
             <div class="mt-5">
-                <div class="card mb-2" v-for="task in tasks">
+                <div class="card mb-2"
+                     v-for="(task, index) in taskList"
+                     @click="completeTask(task.id, index)"
+                     :class="{'completed': task.completed}">
                     <div class="card-body">
                         [[ task.title ]]
-                        <button type="submit" class="close float-right">
+                        <button type="submit"
+                                class="close float-right"
+                                @click.stop="deleteTask(task.id, index)">
                             <span>&times;</span>
                         </button>
                     </div>
