@@ -18,7 +18,7 @@ class TasksView(View):
         form = TaskForm(request.POST)
 
         if form.is_valid():
-            new_task = form.save()
+            form.save()
             return JsonResponse({'task': model_to_dict(form)}, status=200)
 
         return redirect('tasks:tasks')
